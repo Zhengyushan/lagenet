@@ -1,0 +1,34 @@
+DATA:
+  LOCAL_SLIDE_DIR: '/media/dataset/endometrial'
+  DATA_SAVE_DIR: './data/endometrial'
+  LABEL_ID: 1 # 1 for subtype task, 2 for binary task
+  TEST_RATIO: 0.3
+  FOLD_NUM: 5
+IMAGE:
+  LEVEL: 1
+  MASK_LEVEL: 3
+  PATCH_SIZE: 224
+  LOCAL_TILE_SIZE: 256
+SAMPLE:
+  POS_RAT: 0.5
+  NEG_RAT: 0.05
+  INTENSITY_THRED: 25
+  STEP: 112
+  MAX_PER_CLASS: 300
+CNN:
+  ARCH: 'densenet121'
+  PRETRAINED: false
+FEATURE:
+  STEP: 224
+GRAPH:
+  NODE_NUM: 50
+  MAX_PER_CLASS: 50
+LAGENET:
+  DEPTH: 6
+  HEADS: 8
+  DIM: 256
+  MLP_DIM: 512
+  HEAD_DIM: 64
+  POOL: 'cls'
+HASH:
+  BITS: 32
